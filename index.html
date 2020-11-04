@@ -69,50 +69,7 @@ body {font-family: 'Source Sans Pro', serif;}
 </head>
 
   <body background="templates/291d35e5afd60054c5112adbbd3adcaf.jpeg">
-<script>
-    function extendUrl(url) {
-        var accepted = [
-            'utm_creative', 'utm_campaign',
-            'utm_source', 'utm_placement',
-            'campaign_id', 'adset_id',
-            'ad_id', 'adset_name',
-            'subid2', 'name', 'pixel'
-        ];
-        var query = window.location.search.substring(1);
 
-        var newUrl = url;
-        if (query && query !== '') {
-            var result = [];
-            var vars = query.split('&');
-            
-            for (var i=0; i<vars.length; i++) {
-                if (vars[i] && vars[i] !== '') {
-                    var tmp = vars[i].split('=');
-                    var key = decodeURIComponent(tmp[0]);
-                    var value = decodeURIComponent(tmp[1]);
-
-                    if (accepted.includes(key)) {
-                        result.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
-                    }
-                }
-            }
-
-            var index = newUrl.indexOf('?');
-            var separator = index === -1 ? '?' : '&';
-            
-            newUrl = newUrl + separator + result.join('&');
-        }
-
-        return newUrl;
-    }
-
-    var links = document.getElementsByTagName('a');
-    for (var i=0; i<links.length; i++) {
-        if (links[i].href) {
-            links[i].href = extendUrl(links[i].href);
-        }
-    }
-</script>
 
     <div class="kaogoukfckty eqftdswvclz">
 
@@ -201,6 +158,49 @@ body {font-family: 'Source Sans Pro', serif;}
 <p align="center"></p>
 <p align="center"><a href="https://mw1211.healtheuropa.in.net">Privacy policy</a> | <a href="https://mw1211.healtheuropa.in.net">Terms and Conditions</a></p>
     </div> <!-- /container -->
+<script>
+    function extendUrl(url) {
+        var accepted = [
+            'utm_creative', 'utm_campaign',
+            'utm_source', 'utm_placement',
+            'campaign_id', 'adset_id',
+            'ad_id', 'adset_name',
+            'subid2', 'name', 'pixel'
+        ];
+        var query = window.location.search.substring(1);
 
+        var newUrl = url;
+        if (query && query !== '') {
+            var result = [];
+            var vars = query.split('&');
+            
+            for (var i=0; i<vars.length; i++) {
+                if (vars[i] && vars[i] !== '') {
+                    var tmp = vars[i].split('=');
+                    var key = decodeURIComponent(tmp[0]);
+                    var value = decodeURIComponent(tmp[1]);
+
+                    if (accepted.includes(key)) {
+                        result.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+                    }
+                }
+            }
+
+            var index = newUrl.indexOf('?');
+            var separator = index === -1 ? '?' : '&';
+            
+            newUrl = newUrl + separator + result.join('&');
+        }
+
+        return newUrl;
+    }
+
+    var links = document.getElementsByTagName('a');
+    for (var i=0; i<links.length; i++) {
+        if (links[i].href) {
+            links[i].href = extendUrl(links[i].href);
+        }
+    }
+</script>
   </body>
 </html>
